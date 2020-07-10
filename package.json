@@ -1,0 +1,19 @@
+{
+  "name": "@arturdoruch/helper",
+  "description": "A collection of helpers ad wrappers",
+  "keywords": ["ajax request notice", "ajax request json", "local storage encoding item"],
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@arturdoruch/process-noticer": "^1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arturdoruch/js-helper"
+  },
+  "author": {
+    "name": "Artur Doruch",
+    "email": "arturdoruch@interia.pl"
+  },
+  "license": "MIT"
+}
