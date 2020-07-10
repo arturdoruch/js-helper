@@ -1,4 +1,4 @@
-# Tool
+# Helper
 
 A collection of helpers and wrappers.
 
