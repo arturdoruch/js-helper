@@ -2,16 +2,13 @@
 
 A collection of helpers and wrappers.
 
-## Install
+## Installation
 
 ```
 yarn add @arturdoruch/helper
 ```
 
 ## Contents
-
- * Ajax
- * Local storage
 
 ### Ajax
   
@@ -25,36 +22,47 @@ jQuery AJAX request wrapper. Adds functionalities:
     * `method` - If not specified and the `data` or `json` option is set, then option `method`
       will be automatically set to `POST`.   
 
-Usage
+#### Usage
+   
+<a name="ajax-setting-process-noticer"></a>Set (optionally) ProcessNoticer to display notice message and loader while sending request.
+
+```js
+import '@arturdoruch/process-noticer/styles/process-notice.css';
+import ProcessNoticer from '@arturdoruch/process-noticer';
+
+// Set ProcessNoticer without options
+ajax.setProcessNoticer(); 
+
+// or set ProcessNoticer instance with specified options.
+const options = {}; // See available options https://github.com/arturdoruch/js-process-noticer#instance-options.
+ajax.setProcessNoticer(new ProcessNoticer(options)); 
+```         
+   
+<a name="ajax-sending-request"></a>Sending request   
    
 ```js
 import ajax from '@arturdoruch/tool/lib/ajax';
-  
-// Optionally set ProcessNoticer to display notice message and loader while sending request.
-import ProcessNoticer from '@arturdoruch/process-noticer';
-import '@arturdoruch/process-noticer/styles/process-notice.css';
-
-const processNoticer = new ProcessNoticer();
-ajax.setProcessNoticer(processNoticer);
 
 // Send POST request with JSON data and header "Content-Type: application/json; charset=UTF-8".
 ajax.send({
     url: "https://httpbin.org/post",
-    json: {
-        "attr": "value"
-    }   
-}, 'Request notice', true)
+    json: {}   
+})
     .done(function (responseContent) {
         console.log(responseContent);
     });
-```
+
+// Send request and display notice message and loader.
+ajax.send("https://httpbin.org/get", 'Request notice', true);
+```   
       
 ### Local storage
 
 A wrapper for localStorage.
 Adds encoding object and array into string of the setting localStorage item.
 
-Usage
+#### Usage
+
 ```js
 import _localStorage from '@arturdoruch/tool/lib/local-storage';
 
