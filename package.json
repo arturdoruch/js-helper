@@ -2,10 +2,10 @@
   "name": "@arturdoruch/helper",
   "description": "A collection of helpers ad wrappers",
   "keywords": ["ajax request notice", "ajax request json", "local storage encoding item"],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "dependencies": {
-    "@arturdoruch/process-noticer": "^1.0"
+    "@arturdoruch/process-noticer": "^1.2.2"
   },
   "repository": {
     "type": "git",
